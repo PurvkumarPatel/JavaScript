@@ -47,3 +47,68 @@ Jsuser.gretting4 = function(){
 }
 
 console.log(Jsuser.gretting4());//ash2hvhdi,18    undefined
+
+//
+// object defined using constructure or singleton
+
+const suser = new Object() // singlton obj using constructor
+const nsuaer = {} // non singlton obj using litreal
+
+suser.id = "ui21dc43"
+suser.name = "oabye"
+suser.islog = false
+
+console.log(suser);
+
+const ruser = {
+  email: "shdbsaj",
+  fullname:{
+    userfname:{
+      fname: "ojdd",
+      lname: "dnad"
+    }
+  }
+}
+console.log(ruser.fullname); // { userfname: { fname: 'ojdd', lname: 'dnad' } }
+console.log(ruser.fullname.userfname.lname);//dnad
+
+const obj1 = { 1: "a", 2: "b"}
+const obj2 = { 5: "a", 2: "b"}
+
+const obj3 = {obj1,obj2}
+console.log(obj3);//{ obj1: { '1': 'a', '2': 'b' }, obj2: { '2': 'b', '5': 'a' } }
+
+// const obj4 = Object.assign(obj1,obj2)
+// console.log(obj4);//{ '1': 'a', '2': 'b', '5': 'a' }
+
+const obj4 = Object.assign({},obj1,obj2)//{} optinal parameter it will combine source objects into a targrt object whoch is {}
+console.log(obj4);//{ '1': 'a', '2': 'b', '5': 'a' }
+
+const obj5 = {...obj1, ...obj2}//...(spread oprator)
+console.log(obj5);//{ '1': 'a', '2': 'b', '5': 'a' }
+
+const user = [
+  {
+    id:1,
+    email:"sfvish@"
+  },
+  {
+    id:2,
+    email:"sfvidfsssh@"
+  },
+  {
+    id:3,
+    email:"sdfsdfsdwqw@"
+  }
+]
+
+console.log(user[1].email);//sfvidfsssh@
+
+console.log(Object.keys(ruser));//[ 'email', 'fullname' ]
+// it gives a key in array formate
+console.log(Object.values(ruser));//[ 'shdbsaj', { userfname: { fname: 'ojdd', lname: 'dnad' } } ]
+console.log(Object.entries(ruser));//[ [ 'email', 'shdbsaj' ], [ 'fullname', { userfname: [Object] } ] ] 
+console.log(ruser.hasOwnProperty('fullname'));//true
+console.log(ruser.hasOwnProperty('fname'));//false
+console.log(ruser.fullname.userfname.hasOwnProperty('fname'));//true
+

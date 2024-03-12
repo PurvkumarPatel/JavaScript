@@ -112,3 +112,34 @@ console.log(ruser.hasOwnProperty('fullname'));//true
 console.log(ruser.hasOwnProperty('fname'));//false
 console.log(ruser.fullname.userfname.hasOwnProperty('fname'));//true
 
+// distructring of objects
+const course = {
+  instrctur:"patel",
+  price: "999",
+  courteacher: "purv"
+}
+
+//course.instrctur
+
+const {instrctur : inst} = course
+// distructure instrctur and give short name inst using :
+console.log(inst);// patel
+
+// react start
+const navbar= (company)=> {
+
+}
+navbar(Company = "patel12")
+//react end
+
+// json used in api formate
+// {
+//   name :"bdfja",
+//   coursename:"asdbasd",
+//   price:"free"
+// }
+// array of objects
+// [
+//   {},
+//   {}
+// ]

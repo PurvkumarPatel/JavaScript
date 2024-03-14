@@ -1,1 +1,1 @@
-obj2
+addTwo(5)

@@ -21,3 +21,39 @@ console.log(b);//20
 console.log(c);//90
 
 //  when we run using node is different from windows scope
+
+// nested scope
+function one(){
+  const uname = "hitesh"
+  function two(){
+    const web = "youtube"
+    console.log(uname);//hitesh
+  }
+  //console.log(web);//error
+  two()
+}
+one()
+
+if (true) {
+  const username = "hitesh"
+  if (username === "hitesh") {
+      const website = " youtube"
+      console.log(username + website); //hitesh youtube
+  }
+  // console.log(website);// error outside access
+}
+
+// console.log(username);
+
+console.log(addone(5)) // 6 //here function can be accessed before initializing
+
+function addone(num){
+    return num + 1
+}
+
+addTwo(5) // Error here it cant be acceaaible bcz function stored in variable
+const addTwo = function(num){// here addTwo called as ana expression
+    return num + 2
+}
+console.log(addTwo);//[Function: addTwo]
+console.log(addTwo(5));//7

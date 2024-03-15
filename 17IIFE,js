@@ -1,0 +1,14 @@
+// Immediately Invoked Function Expressions(IIFE)
+(function chai(){
+  // named iife name is chai
+  console.log(`DB Connected`);
+})();//DB Connected
+
+// here ()//first parnethesis used to define function ()//2nd is for execution 
+// iife used bcz some time due to global scope pollution to remove this problem we use
+
+// in IIFE u have to put ; at end bcz it is not determine where i have to end the function 
+( (name) => {
+  // unnamed iife 
+  console.log(`DB Connected two ${name}`);
+})("patel");//DB Connected two patel

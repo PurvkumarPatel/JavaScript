@@ -71,3 +71,81 @@ do {
     console.log(`Score is ${score}`);
     score++
 } while (score <= 10);// Score is 11
+
+
+// higher order array loop
+
+// for of
+
+// ["", "", ""]
+// [{}, {}, {}]
+
+const ar = [1, 2, 3, 4, 5]
+// num is iterator and ar is object // here object doen't mean previoes one
+for (const num of ar) {
+    console.log(num);
+}
+
+const greetings = "Hello world!"
+for (const greet of greetings) {
+    console.log(`Each char is ${greet}`)
+}
+
+// Maps
+const map = new Map()
+map.set('IN', "India")
+map.set('USA', "United States of America")
+map.set('Fr', "France")
+map.set('IN', "Bharat")// overwrite on India
+
+console.log(map);
+
+for (const [key] of map) {// [] not used in key than whole map is printed 
+  console.log(key);
+}
+// IN
+// USA
+// Fr
+
+for (const [key, value] of map) {
+  console.log(key, ':-', value);
+}
+// IN :- Bharat
+// USA :- United States of America
+// Fr :- France
+
+const myObject = {
+  game1: 'NFS',
+  game2: 'Spiderman'
+}
+
+// for (const [key, value] of myObject) {
+//     console.log(key, ':-', value); 
+// } // here object is not iteratable  using for of loop
+
+// For In loop
+const myObject1 = {
+  js: 'javascript',
+  cpp: 'C++',
+  rb: "ruby",
+  swift: "swift by apple"
+}
+
+for (const key in myObject1) {
+  console.log(key); // rb
+  console.log(myObject1[key]); // ruby
+  console.log(`${key} shortcut is for ${myObject1[key]}`); //  rb shortcut is for ruby
+}
+
+const programming = ["js", "rb", "py", "java", "cpp"]
+
+for (const key in programming) {
+    console.log(key);//0 1 2 3 4 
+    console.log(programming[key]);// js rb py java cpp
+}
+
+// mapos
+for(const key in map){ // map are not itratable in for in loop
+  console.log(key);// nothing is printed but executed
+}
+

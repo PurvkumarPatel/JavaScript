@@ -45,3 +45,15 @@ myCoding.forEach( (item) => {
 // javascript
 // java
 // python
+
+const values = coding.forEach((iteam)=>{// here foreach loop don't return anything
+  console.log(iteam);
+  return iteam
+})
+// js
+// ruby
+// java
+// python
+// cpp
+
+console.log(values);// undefined

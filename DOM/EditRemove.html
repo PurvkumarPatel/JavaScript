@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit/remove | chai and code</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <ul class="lang">
+      <li>JS</li>
+    </ul>
+  </body>
+  <script>
+    function langADD(langName) {
+      const li = document.createElement("li");
+      li.innerHTML = `${langName}`; // it travsel whole dom tree
+      document.querySelector(".lang").appendChild(li);
+    }
+    langADD("Patel");
+    langADD("Patel2");
+
+    let optimizedADD = (langName) => {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".lang").appendChild(li);
+    };
+    optimizedADD("optimized");
+
+    //Edit
+    const ele = document.querySelector("li:nth-child(2)");
+    //ele.innerHTML = "changed";
+    console.log(ele);
+    const newele = document.createElement("li");
+    newele.textContent = "Changed";
+    ele.replaceWith(newele);
+
+    const fele = document.querySelector("li:first-child");
+    fele.outerHTML='<li>outer html changed</li>';
+
+    //remove
+    const lastnode = document.querySelector("li:last-child");
+    lastnode.remove();
+  </script>
+</html>
